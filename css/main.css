@@ -4,20 +4,19 @@
   box-sizing: border-box;
 }
 
-.flex, .playlist-wrapper, .browser-playlist, .browser__content, .browser__navbar, .button, .landing__right, .main {
+.flex, .playlist-wrapper, .browser-playlist, .browser__navbar, .button, .landing__right, .main {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.grid, .browser-wrapper, .landing__left, .landing {
+.grid, .project-card .info, .project-card, .browser-wrapper, .landing__left, .landing {
   display: grid;
   align-items: center;
   justify-items: center;
 }
 
 html {
-  overflow: hidden;
   font-size: 62.5%;
 }
 
@@ -108,13 +107,14 @@ h4 {
 .browser-wrapper {
   grid-template-columns: 15% 60% 25%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .browser__navbar {
   background-color: #CAD315;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 .browser__navbar ul {
   list-style: none;
@@ -127,25 +127,49 @@ h4 {
 }
 
 .browser__content {
-  flex-direction: column;
   padding-top: 10%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
 }
-.browser__content .project-card {
+
+.project-card {
   width: 80%;
   height: 200px;
-  margin: 10px;
+  margin: 10px auto;
   background: #fefefe;
-  border: 1px solid black;
   border-radius: 5px;
+  grid-template-columns: 70% 30%;
+}
+.project-card .info {
+  justify-items: left;
+  grid-template-rows: 20% 15% auto;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.project-card .info .title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+.project-card .info .subtitle {
+  font-size: 1rem;
+}
+.project-card .image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.project-card .image img {
+  width: 100%;
 }
 
 .browser-playlist {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: lightblue;
+  background-color: #F2F4C0;
 }
 
 .playlist-wrapper {
