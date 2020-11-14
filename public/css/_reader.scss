@@ -1,0 +1,39 @@
+
+.header--reader {
+    
+}
+.reader { 
+    @extend .flex;
+
+    flex-direction: column;
+    height: auto;
+    padding-top: 5%;
+
+    h1, p {
+        height: auto;
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 600;
+        border-bottom: 1px solid gray;
+        margin-bottom: 50px;
+    }
+    #image {
+        width: 60%;
+        margin-bottom: 50px;
+    }
+    #description {
+        font-size: 2rem;
+        font-weight: 400;
+
+    }
+    #content {
+        font-size: 1.5rem;
+        font-weight: 300;
+        overflow: hidden;
+
+    }
+}

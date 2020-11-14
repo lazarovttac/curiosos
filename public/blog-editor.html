@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/blog-editor.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+</head>
+<body>
+    <header class="header header--editor">
+        <a href="index.html" class="button button--home"></a>
+   
+        <div id="whenSignedIn">
+            <button class="button button--save" id="save-btn">Guardar</button>
+            <div class="user">
+                <div id="user-image">
+                    <img src="" alt="">
+                </div>
+                <p id="user-name"></p>
+            </div>
+        </div>
+
+    </header>
+    <section class="section editor" id="editor">
+        <textarea id="title-input" placeholder="Título" maxlength="100"></textarea>
+        <textarea id="image-input" placeholder="URL de imagen"></textarea>
+        <textarea id="subtitle-input" placeholder="Subtítulo"maxlength="100"></textarea>
+        <textarea id="description-input" placeholder="Descripción breve" maxlength="300"></textarea>
+        <textarea id="content-input" placeholder="Contenido"></textarea>
+    </div>
+    <div id="whenSignedOut">
+
+    </div>
+    <script src="js/editor.js" defer></script>
+</body>
+</html>

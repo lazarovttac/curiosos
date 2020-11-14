@@ -1,4 +1,16 @@
+.landing {
+    @extend .flex;
+    flex-direction: column;
 
+
+    width: 100%;
+    height: 100vh;
+}
+
+
+.header--landing {
+    justify-content: flex-end;
+}
 .header--browser {
 
     ul {
@@ -8,24 +20,27 @@
         float: left;
 
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         color: white;
 
         li {
+            cursor: pointer;
+            
             background-color: $first-color;
             padding: 5px 30px;
             border-radius: 20px;
             margin: 0px 20px;
+
+            a {
+                text-decoration: none;    
+                color: white;
+            }
         }
+
+
     }
 
 }
-
-.landing {
-    @extend .flex;
-    flex-direction: column;
-}
-
 .landing__main {
     @extend .grid;
     grid-template-columns: 1fr 1fr;
@@ -72,37 +87,20 @@
 }
 
 .browser {
-    @extend .grid;
-    grid-template-rows: 15% auto;
-    // grid-template-columns: 75% auto; 
-
+    @extend .flex;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
 
 }
 
 .browser__content {
-    padding-top: 10%;
     width: 100%;
-    height: 100vh;
+    min-height: calc(100vh - 75px);
     overflow-y: scroll;
 
-    grid-row-start: 2;
 }
 
-
-.browser-playlist {
-    @extend .flex;
-    flex-direction: column;
-
-    width: 100%;
-    height: 100%;
-
-    grid-row-start: 2;
-    // background-color: #F2F4C0;
-
-}
 
 .playlist-wrapper{
     @extend .flex;
