@@ -38,14 +38,14 @@ auth.onAuthStateChanged(user => {
         whenSignedIn.style.display = "flex";
         whenSignedOut.style.display = "none";
 
-        createButton.hidden = false;
+        createButton.style.display = "flex";
         userImage.src = user.photoURL;
     }else {
         //Someone signed out
         whenSignedIn.style.display = "none";
         whenSignedOut.style.display = "flex";
 
-        createButton.hidden = true;
+        createButton.style.display = "none";
         userImage.src = '';
     }
 })
@@ -65,7 +65,6 @@ const collectionRef = firestore.collection("blog-posts");
 getRealTimeUpdates = function(){
   collectionRef.onSnapshot(querySnapshot => {
       const items = querySnapshot.docs.map(doc => {
-          const content = convert(doc.data().content);
           return    `<div class="project-card" onclick="openMe('${doc.id}')">
                         <div class="info">
                             <h1 class="title">${doc.data().title}</h1>
