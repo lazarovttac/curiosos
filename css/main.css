@@ -1,18 +1,29 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.flex, .playlist-wrapper, .browser-playlist, .button, .landing__right, .landing, .header ul, .header {
+.flex, .header, .button, .header--browser ul, .landing, .landing__right, .browser-playlist, .playlist-wrapper, .editor {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.grid, .project-card .info, .project-card, .browser, .landing__left, .landing__main {
+.grid, .project-card, .project-card .info, .landing__main, .landing__left, .browser {
+  display: -ms-grid;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
 }
 
@@ -21,7 +32,6 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   width: 100%;
 }
 
@@ -32,43 +42,8 @@ body {
 
 .header {
   width: 100%;
-  height: 50px;
-}
-.header ul {
-  list-style: none;
-  float: left;
-  text-align: center;
-  font-size: 1.5rem;
-  color: white;
-}
-.header ul li {
-  background-color: #CAD315;
-  padding: 5px 30px;
-  border-radius: 20px;
-  margin: 0px 20px;
-}
-
-.landing {
-  flex-direction: column;
-}
-
-.landing__main {
-  grid-template-columns: 1fr 1fr;
-  width: 80%;
-  height: 70%;
-}
-
-.landing__right {
-  width: 100%;
-  height: 100%;
-}
-
-.landing__left {
-  justify-items: left;
-  width: 100%;
-  height: 100%;
-  grid-template-rows: 40% 20% 20%;
-  padding-top: 4rem;
+  height: 75px;
+  padding: 10px;
 }
 
 h3 {
@@ -86,17 +61,11 @@ h4 {
   line-height: 3rem;
 }
 
-.svg_wrapper {
-  height: 90%;
-  width: 90%;
-}
-.svg_wrapper svg {
-  height: 100%;
-  width: 100%;
-}
-
 .button {
   text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
   border-radius: 20px;
   height: 35px;
   width: 150px;
@@ -109,6 +78,111 @@ h4 {
   color: white;
 }
 
+.button--home {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.button--save {
+  height: 35px;
+  width: 105px;
+  border-radius: 20px;
+  background-color: #3D97EA;
+}
+
+.project-card {
+  width: 80%;
+  height: 200px;
+  margin: 10px auto;
+  background: #fefefe;
+  border-radius: 5px;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+}
+
+.project-card .info {
+  justify-items: left;
+  -ms-grid-rows: 20% 15% auto;
+      grid-template-rows: 20% 15% auto;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.project-card .info .title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.project-card .info .subtitle {
+  font-size: 1rem;
+}
+
+.project-card .image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project-card .image img {
+  width: 100%;
+}
+
+.header--browser ul {
+  list-style: none;
+  float: left;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header--browser ul li {
+  background-color: #CAD315;
+  padding: 5px 30px;
+  border-radius: 20px;
+  margin: 0px 20px;
+}
+
+.landing {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.landing__main {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 80%;
+  height: 70%;
+}
+
+.landing__right {
+  width: 100%;
+  height: 100%;
+}
+
+.landing__left {
+  justify-items: left;
+  width: 100%;
+  height: 100%;
+  -ms-grid-rows: 40% 20% 20%;
+      grid-template-rows: 40% 20% 20%;
+  padding-top: 4rem;
+}
+
+.svg_wrapper {
+  height: 90%;
+  width: 90%;
+}
+
+.svg_wrapper svg {
+  height: 100%;
+  width: 100%;
+}
+
 .button--start {
   color: white;
   font-size: 1.2rem;
@@ -116,11 +190,13 @@ h4 {
   border-radius: 20px;
   height: 40px;
   width: 175px;
-  grid-row-start: 3;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
 }
 
 .browser {
-  grid-template-rows: 15% auto;
+  -ms-grid-rows: 15% auto;
+      grid-template-rows: 15% auto;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -131,60 +207,83 @@ h4 {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
-  grid-row-start: 2;
-}
-
-.project-card {
-  width: 80%;
-  height: 200px;
-  margin: 10px auto;
-  background: #fefefe;
-  border-radius: 5px;
-  grid-template-columns: 70% 30%;
-}
-.project-card .info {
-  justify-items: left;
-  grid-template-rows: 20% 15% auto;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-.project-card .info .title {
-  font-size: 2rem;
-  font-weight: 100;
-}
-.project-card .info .subtitle {
-  font-size: 1rem;
-}
-.project-card .image {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-}
-.project-card .image img {
-  width: 100%;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
 }
 
 .browser-playlist {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   height: 100%;
-  grid-row-start: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
 }
 
 .playlist-wrapper {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 80%;
   height: 50%;
   border-radius: 10px;
   background-color: #3c3c3c;
 }
+
 .playlist-wrapper iframe {
   width: 100%;
   height: 100%;
   border-radius: 10px;
 }
+
 .playlist-wrapper .button {
   height: 50px;
+}
+
+.editor {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  padding-top: 10%;
+}
+
+.editor textarea {
+  resize: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  height: auto;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.editor #title-input {
+  font-size: 3rem;
+  font-weight: 600;
+  height: 5rem;
+}
+
+.editor #description-input {
+  font-size: 2rem;
+  font-weight: 400;
+  border-bottom: 1px solid gray;
+  height: 4rem;
+}
+
+.editor #content-input {
+  font-size: 1.5rem;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.header--editor {
+  padding: 10px 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }

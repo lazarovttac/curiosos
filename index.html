@@ -7,6 +7,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="/__/firebase/8.0.2/firebase-auth.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD45RIV1b1vlHuzEL5k_iFxn0cVX1xjFhg",
+            authDomain: "curiosidad.firebaseapp.com",
+            databaseURL: "https://curiosidad.firebaseio.com",
+            projectId: "curiosidad",
+            storageBucket: "curiosidad.appspot.com",
+            messagingSenderId: "71425050918",
+            appId: "1:71425050918:web:a9e55a46983c86c3a959e7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
 </head>
 <body>
     <section class="section landing">
@@ -447,13 +469,16 @@
     </section>
    
     <section class="section browser">
-        <header class="header">
+        <header class="header header--browser">
             <nav>
                 <ul>
                     <li>Proyectos</li>
                     <li>Reciclado</li>
                     <li>Compost</li>
                     <li>Agua</li>
+                    <li>
+                        <a href="blog-editor.html">Crear</a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -488,5 +513,7 @@
             </div>
         </aside> -->
     </section>
+    
+    <script src="js/app.js" defer></script>
 </body>
 </html>

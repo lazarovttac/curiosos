@@ -1,0 +1,41 @@
+
+.editor { 
+    @extend .flex;
+
+    flex-direction: column;
+    height: auto;
+    padding-top: 10%;
+
+    textarea {
+        resize: none;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        height: auto;
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    #title-input {
+        font-size: 3rem;
+        font-weight: 600;
+        height: 5rem;
+    }
+    #description-input {
+        font-size: 2rem;
+        font-weight: 400;
+        border-bottom: 1px solid gray;
+        height: 4rem;
+    }
+    #content-input {
+        font-size: 1.5rem;
+        font-weight: 300;
+        overflow: hidden;
+    }
+}
+
+
+.header--editor {
+    padding: 10px 50px;
+    justify-content: space-between;
+}
