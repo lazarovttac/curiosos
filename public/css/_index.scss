@@ -87,18 +87,17 @@
 }
 
 .browser {
-    @extend .flex;
-    flex-direction: column;
     width: 100%;
     min-height: 100vh;
-
+    overflow: hidden;
 }
 
 .browser__content {
+    @extend .grid;
+    padding-top: 5%;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
-    min-height: calc(100vh - 75px);
-    overflow-y: scroll;
-
+    overflow: hidden;
 }
 
 

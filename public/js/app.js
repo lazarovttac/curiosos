@@ -55,17 +55,52 @@ function goToEditor() {
     window.location = "blog-editor.html";
 }
 
+
+
 const projectsList = document.getElementById("list-of-projects")
-//Get
+
 
 var firestore = firebase.firestore();
-//Document
-const collectionRef = firestore.collection("blog-posts");
 
-getRealTimeUpdates = function(){
-  collectionRef.onSnapshot(querySnapshot => {
-      const items = querySnapshot.docs.map(doc => {
-          return    `<div class="project-card" onclick="openMe('${doc.id}')">
+//Collections
+const environmentCollection = firestore.collection("environment");
+const techCollection = firestore.collection("tech");
+const medicineCollection = firestore.collection("medicine");
+const foodCollection = firestore.collection("food");
+const musicCollection = firestore.collection("music");
+const othersCollection = firestore.collection("others");
+
+//By default env post are shown
+ShowPosts("environment");
+
+function ShowPosts(category) {
+    switch (category) {
+        case "environment":
+            GetPostFrom(environmentCollection);
+          break;
+        case "tech":
+            GetPostFrom(techCollection);
+          break;
+        case "medicine":
+            GetPostFrom(medicineCollection);
+          break;
+        case "food":
+            GetPostFrom(foodCollection);
+          break;
+        case "music":
+            GetPostFrom(musicCollection);
+          break;
+        default:
+          SaveTo(othersCollection);
+          break;
+      }
+}
+
+function GetPostFrom(collection) {
+    collection.get()
+    .then(function(querySnapshot) {
+        const items = querySnapshot.docs.map(doc => {
+            return    `<div class="project-card" onclick="openMe('${doc.id}')">
                         <div class="info">
                             <h1 class="title">${doc.data().title}</h1>
                             <p class="description">${doc.data().description}</p>
@@ -73,17 +108,19 @@ getRealTimeUpdates = function(){
                         </div>
                         <div class="image" style="background: url(${doc.data().image}) no-repeat center"> </div>
                     </div>`
-      });
 
-      projectsList.innerHTML = items.join('');
-  });
+        });
+
+        projectsList.innerHTML = items.join('');
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
 }
-
-getRealTimeUpdates();
 
 
 function convert(inputText) {
-  
+    
     var converter = new showdown.Converter();
     var outputHtml = converter.makeHtml(inputText);
     
@@ -93,3 +130,23 @@ function convert(inputText) {
 function openMe(id) {
     window.location.href = 'reader.html' + '#' + id;
 }
+
+
+
+// getRealTimeUpdates = function(){
+//   collectionRef.onSnapshot(querySnapshot => {
+//       const items = querySnapshot.docs.map(doc => {
+//           return    `<div class="project-card" onclick="openMe('${doc.id}')">
+//                         <div class="info">
+//                             <h1 class="title">${doc.data().title}</h1>
+//                             <p class="description">${doc.data().description}</p>
+//                             <p class="author">${doc.data().author}</p>
+//                         </div>
+//                         <div class="image" style="background: url(${doc.data().image}) no-repeat center"> </div>
+//                     </div>`
+//       });
+
+//       projectsList.innerHTML = items.join('');
+//   });
+// }
+// getRealTimeUpdates();
