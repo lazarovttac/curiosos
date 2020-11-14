@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-.flex, .playlist-wrapper, .browser-playlist, .browser__navbar, .button, .landing__right, .main {
+.flex, .playlist-wrapper, .browser-playlist, .button, .landing__right, .landing, .header ul, .header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.grid, .project-card .info, .project-card, .browser-wrapper, .landing__left, .landing {
+.grid, .project-card .info, .project-card, .browser, .landing__left, .landing__main {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -22,22 +22,37 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  height: 100vh;
   width: 100%;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
 }
 
 .header {
   width: 100%;
   height: 50px;
-  background-color: #CAD315;
 }
-
-.main {
-  flex-direction: column;
-  height: calc(100% - 50px);
+.header ul {
+  list-style: none;
+  float: left;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+.header ul li {
+  background-color: #CAD315;
+  padding: 5px 30px;
+  border-radius: 20px;
+  margin: 0px 20px;
 }
 
 .landing {
+  flex-direction: column;
+}
+
+.landing__main {
   grid-template-columns: 1fr 1fr;
   width: 80%;
   height: 70%;
@@ -104,26 +119,11 @@ h4 {
   grid-row-start: 3;
 }
 
-.browser-wrapper {
-  grid-template-columns: 15% 60% 25%;
+.browser {
+  grid-template-rows: 15% auto;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-}
-
-.browser__navbar {
-  background-color: #CAD315;
-  width: 100%;
-  height: 100vh;
-}
-.browser__navbar ul {
-  list-style: none;
-  text-align: center;
-  font-size: 1.5rem;
-  color: white;
-}
-.browser__navbar ul li {
-  margin: 20px 0;
 }
 
 .browser__content {
@@ -131,6 +131,7 @@ h4 {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
+  grid-row-start: 2;
 }
 
 .project-card {
@@ -169,7 +170,7 @@ h4 {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #F2F4C0;
+  grid-row-start: 2;
 }
 
 .playlist-wrapper {
