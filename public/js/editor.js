@@ -33,7 +33,8 @@ saveButton.addEventListener("click", function (){
     image: imageToSave,
     description: descriptionToSave,
     content: contentToSave,
-    author: currentUser.displayName
+    author: currentUser.displayName,
+    created: firebase.firestore.FieldValue.serverTimestamp()
 
     // time: serverTimestamp()
   }).then(function(){

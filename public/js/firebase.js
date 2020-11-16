@@ -15,13 +15,12 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 //Auth
 const auth = firebase.auth();
-//Provider for Auth
-const provider = new firebase.auth.GoogleAuthProvider();
 //Database
 const dataBase = firebase.firestore();
+//Provider for Auth
+const provider = new firebase.auth.GoogleAuthProvider();
 //Blogs Collection
 const blogPostsCollection = dataBase.collection("blog-posts");
 

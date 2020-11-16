@@ -6,7 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.flex, .header, .header--browser ul, .button, #whenSignedIn, #whenSignedOut, .landing, .landing__right, .playlist-wrapper, .editor, .reader {
+.flex, .header, .header--browser ul, .button, .card__header, .card__footer, #whenSignedIn, #whenSignedOut, .landing, .landing__right, .playlist-wrapper, .editor, .reader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,13 +18,18 @@
           justify-content: center;
 }
 
-.grid, .project-card, .project-card .info, .landing__main, .landing__left, .browser__content {
+.grid, .card, .card__main, .card__info, .landing__main, .landing__left, .browser__content {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
+}
+
+.fill, .card__header, .card__main, .card__footer, .card__info, .card__image {
+  width: 100%;
+  height: 100%;
 }
 
 html {
@@ -164,47 +169,63 @@ h4 {
       grid-row-start: 3;
 }
 
-.project-card {
-  width: 80%;
+.card {
+  -ms-grid-rows: 10% 75% 15%;
+      grid-template-rows: 10% 75% 15%;
+  overflow: hidden;
+  width: 90%;
   height: 250px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #efefef;
   margin: 5% 0;
-  -ms-grid-columns: 70% 30%;
-      grid-template-columns: 70% 30%;
 }
 
-.project-card .info {
+.card__header {
+  padding: 0 5%;
+}
+
+.card__main {
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  padding: 0 5%;
+}
+
+.card__footer {
+  padding: 0 5%;
+  background-color: #efefef;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card__info {
   justify-items: left;
-  -ms-grid-rows: 40% auto;
-      grid-template-rows: 40% auto;
-  width: 100%;
-  height: 100%;
   padding: 20px;
 }
 
-.project-card .info .title {
-  font-size: 2.5rem;
-  font-weight: 100;
-}
-
-.project-card .info .description {
+.card__info .title {
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
-.project-card .info .author {
+.card__info .description {
   font-size: 1rem;
 }
 
-.project-card .image {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 10px;
+.card__info .author {
+  font-size: 1rem;
 }
 
-.project-card .image img {
-  width: 100%;
+.card__image {
+  overflow: hidden;
+}
+
+#whenSignedIn {
+  display: none;
+}
+
+#whenSignedOut {
+  display: none;
 }
 
 #user-image {
