@@ -78,16 +78,14 @@ function NewCard(id, title, description, author, image, timestamp, color){
     var text_date = month +'/'+ date+'/'+ year;
     return  (
     `<div class="card" onclick="openMe('${id}')">
-       
-        <main class="card__main">
-            <div class="card__info">
-                <div class="card__tag" style='background-color: ${color};'>${text_date}</div>
-                <h1 class="title">${title}</h1>
-                <p class="description">${description}</p>
-                <p class="author">${author}</p>
-            </div>
-            <div class="card__image" style="background: url(${image}) no-repeat center"> </div>
-        </main>
+        <div class="card__image" style="background:  url(${image}) no-repeat center; background-size:cover;"> </div>
+        <div class="card__info">
+            <div class="card__tag" style='background-color: ${color};'>${text_date}</div>
+            <h1 class="title">${title}</h1>
+            <p class="description">${description}</p>
+            <p class="author">${author}</p>
+        </div>
+
     </div>`)
 }
 

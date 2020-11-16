@@ -16,8 +16,11 @@
         justify-content: center;
 
         ul {
-            @extend .flex;
-    
+            @extend .grid;
+            @extend .fill;
+
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1%;
             list-style: none;
             float: left;
     
@@ -32,7 +35,6 @@
 
                 padding: 5px 30px;
                 border-radius: 20px;
-                margin: 0px 20px;
     
                 a {
                     text-decoration: none;    
@@ -175,40 +177,22 @@ h4 {
 
 .card {
     @extend .grid;
-    grid-template-rows: 15% 70% 15%;
-    overflow: hidden;
-    min-width: 90%;
-    max-width: 95%;
-    min-height: 250px;
+    grid-template-rows: 50% auto;
+    overflow-y: auto;
+    width: 80%;
+    min-height: 500px;
 
     transition: 200ms;
-    padding: 5%;
+    margin-bottom: 10%;
+    gap: 5%;
 
-    // background-color: rgb(235, 235, 235);
-    // border: 1px solid grey;
-
-    &__header {
-        @extend .flex;
-        @extend .fill;
-
-        justify-content: left;
-        padding: 2%;
-    }
-    &__main {
-        @extend .grid;
-        @extend .fill;
-        padding: 2%;
-
-        grid-template-columns: 70% 30%;
-        gap: 2%;
-    }
-    &__footer {
-        @extend .fill;
-        @extend .flex;
-        padding: 2%;
-        justify-content: space-between;
-    }
+    // background-color: rgb(240, 240, 240);
+    // border-radius: 2%;
     
+    &__image {
+        @extend .fill;
+        overflow: hidden;
+    }
 
     &__info {
         @extend .fill;
@@ -222,15 +206,11 @@ h4 {
             font-weight: 400;
         }
         .description {
-            font-size: 1rem;
+            font-size: 1.25rem;
         }
         .author {
             font-size: 1rem;
         }
-    }
-    &__image {
-        @extend .fill;
-        overflow: hidden;
     }
 
     &__tag {
@@ -244,16 +224,16 @@ h4 {
 }
 
 
-#whenSignedIn {
+.whenSignedIn {
     @extend .flex;
     display: none;
 }
-#whenSignedOut {
+.whenSignedOut {
     @extend .flex;
     display: none;
 }
 
-#user-image {
+.user-image {
     width: 35px;
     height: 35px;
     border-radius: 50%;

@@ -24,9 +24,9 @@ const provider = new firebase.auth.GoogleAuthProvider();
 //Blogs Collection
 const blogPostsCollection = dataBase.collection("blog-posts");
 
-const whenSignedIn = document.getElementById('whenSignedIn');
-const whenSignedOut = document.getElementById('whenSignedOut');
-const userImage = document.getElementById('user-image');
+const whenSignedIn = document.getElementsByClassName('whenSignedIn');
+const whenSignedOut = document.getElementsByClassName('whenSignedOut');
+const userImages = document.getElementsByClassName('user-image');
 
 function SignIn(){
     auth.signInWithPopup(provider);
@@ -40,16 +40,36 @@ auth.onAuthStateChanged(user => {
     if(user) {
         currentUser = user;
         //Someone signed in
-        whenSignedIn.style.display = "flex";
-        whenSignedOut.style.display = "none";
-        userImage.src = user.photoURL;
+        for (let i = 0; i < whenSignedIn.length; i++) {
+            whenSignedIn[i].style.display = "flex";
+            
+        }
+        for (let i = 0; i < whenSignedOut.length; i++) {
+            whenSignedOut[i].style.display = "none";
+            
+        }
+        for (let i = 0; i < userImages.length; i++) {
+            userImages[i].src = user.photoURL;
+            
+        }
+
+        FixTextAreas();
+
     }else {
         currentUser = {};
         //Someone signed out
-        whenSignedIn.style.display = "none";
-        whenSignedOut.style.display = "flex";
-
-        userImage.src = '';
+        for (let i = 0; i < whenSignedIn.length; i++) {
+            whenSignedIn[i].style.display = "none";
+            
+        }
+        for (let i = 0; i < whenSignedOut.length; i++) {
+            whenSignedOut[i].style.display = "flex";
+            
+        }
+        for (let i = 0; i < userImages.length; i++) {
+            userImages[i].src = "";
+            
+        }
     }
 })
 
