@@ -7,40 +7,6 @@
     height: 100vh;
 }
 
-
-.header--landing {
-    justify-content: flex-end;
-}
-.header--browser {
-
-    ul {
-        @extend .flex;
-
-        list-style: none;
-        float: left;
-
-        text-align: center;
-        font-size: 1.25rem;
-        color: white;
-
-        li {
-            cursor: pointer;
-            
-            background-color: $first-color;
-            padding: 5px 30px;
-            border-radius: 20px;
-            margin: 0px 20px;
-
-            a {
-                text-decoration: none;    
-                color: white;
-            }
-        }
-
-
-    }
-
-}
 .landing__main {
     @extend .grid;
     grid-template-columns: 1fr 1fr;
@@ -71,19 +37,6 @@
         height: 100%;
         width: 100%;
     }
-}
-
-
-.button--start {
-    color: white;
-    font-size: 1.2rem;
-    background-color: $second-color;
-
-    border-radius: 20px;
-    height: 40px;
-    width: 175px;
-
-    grid-row-start: 3;
 }
 
 .browser {

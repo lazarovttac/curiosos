@@ -2,10 +2,46 @@
 
 .header {
     @extend .flex;
+    justify-content: space-between;
+
     width: 100%;
     height: $header-height;
 
     padding: 10px;
+
+    
+
+    &--browser {
+
+        justify-content: center;
+
+        ul {
+            @extend .flex;
+    
+            list-style: none;
+            float: left;
+    
+            text-align: center;
+            font-size: 1.25rem;
+            color: white;
+    
+            li {
+                cursor: pointer;
+                
+                background-color: $first-color;
+                padding: 5px 30px;
+                border-radius: 20px;
+                margin: 0px 20px;
+    
+                a {
+                    text-decoration: none;    
+                    color: white;
+                }
+            }
+    
+    
+        }
+    }
 }
 
 
@@ -64,13 +100,9 @@ h4 {
         }
     }
     &--create {
-        display: block;
-        position: fixed;
-        bottom: 5%;
-        right: 2%;
         font-size: 1rem;
-        height: 50px;
-        width: 50px;
+        height: 45px;
+        width: 45px;
         border-radius: 50%;
         background-color: $second-color;
 
@@ -83,10 +115,15 @@ h4 {
     }
 
     &--save {
+
+        &::after{
+            content: 'Guardar';
+        }
         height: 35px;
         width: 105px;
         border-radius: 20px;
         background-color: $second-color;
+        transition: 200ms;
     }
 
     &--log-in {
@@ -100,6 +137,18 @@ h4 {
         width: 105px;
         border-radius: 20px;
         background-color: $second-color;
+    }
+
+    &--start {
+        color: white;
+        font-size: 1.2rem;
+        background-color: $second-color;
+    
+        border-radius: 20px;
+        height: 40px;
+        width: 175px;
+    
+        grid-row-start: 3;
     }
 }
 
@@ -163,11 +212,9 @@ h4 {
     margin: 0 10px;
 }
 
-@keyframes saved {
-    from{
-        background-color: $second-color;
-    }
-    to {
-        background-color: $first-color;
+.saved {
+    background-color: $first-color;
+    &::after{
+        content: 'Guardado';
     }
 }

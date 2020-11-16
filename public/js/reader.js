@@ -1,23 +1,8 @@
+
+//Document ID
 var theid = window.location.hash.substring(1);
-
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyD45RIV1b1vlHuzEL5k_iFxn0cVX1xjFhg",
-    authDomain: "curiosidad.firebaseapp.com",
-    databaseURL: "https://curiosidad.firebaseio.com",
-    projectId: "curiosidad",
-    storageBucket: "curiosidad.appspot.com",
-    messagingSenderId: "71425050918",
-    appId: "1:71425050918:web:a9e55a46983c86c3a959e7"
-};
-
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-var firestore = firebase.firestore();
 //Document
-const blogPost = firestore.collection("blog-posts").doc(`${theid}`);
+const blogPost = blogPostsCollection.doc(`${theid}`);
 
 blogPost.get().then(function(doc) {
     if (doc.exists) {
