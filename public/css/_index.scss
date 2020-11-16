@@ -49,6 +49,7 @@
     @extend .grid;
     padding-top: 5%;
     grid-template-columns: 1fr 1fr;
+    gap: 5%;
     width: 100%;
     overflow: hidden;
 }

@@ -60,23 +60,24 @@
                 <div class="landing__left">
                     <h3>EL Blog Curioso</h3>
                     <h4>
-                        
+                        Descrubre iniciativas y proyectos interesantes
                     </h4>
-                    <a href="#" class="button button--start">Empezá acá</a>
+                    <a href="#browser" class="button button--start">Descubrir</a>
                 </div>
             </main>
         </div>
     </section>
    
-    <section class="section browser">
+    <section class="section browser" id="browser">
         <header class="header header--browser">
             <nav>
                 <ul>
-                    <li onclick="ShowPosts('environment')">Ambiente</li>
-                    <li onclick="ShowPosts('tech')">Tecnología</li>
-                    <li onclick="ShowPosts('medicine')">Medicina</li>
-                    <li onclick="ShowPosts('music')">Música</li>
-                    <li onclick="ShowPosts('food')">Cocina</li>
+                    <li onclick="ShowPosts('new', this)">Últimos</li>
+                    <li onclick="ShowPosts('environment', this)">Ambiente</li>
+                    <li onclick="ShowPosts('tech', this)">Tecnología</li>
+                    <li onclick="ShowPosts('medicine', this)">Medicina</li>
+                    <li onclick="ShowPosts('music', this)">Música</li>
+                    <li onclick="ShowPosts('food', this)">Cocina</li>
                 </ul>
             </nav>
         </header>

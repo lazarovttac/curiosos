@@ -28,7 +28,8 @@
             li {
                 cursor: pointer;
                 
-                background-color: $first-color;
+                transition: 200ms;
+
                 padding: 5px 30px;
                 border-radius: 20px;
                 margin: 0px 20px;
@@ -36,6 +37,25 @@
                 a {
                     text-decoration: none;    
                     color: white;
+                }
+
+                &:nth-child(1){   
+                    background-color: $other-color;
+                }
+                &:nth-child(2){   
+                    background-color: $env-color;
+                }
+                &:nth-child(3){   
+                    background-color: $tech-color;
+                }
+                &:nth-child(4){   
+                    background-color: $medicine-color;
+                }
+                &:nth-child(5){   
+                    background-color: $music-color;
+                }
+                &:nth-child(6){   
+                    background-color: $food-color;
                 }
             }
     
@@ -49,7 +69,7 @@ h3 {
     font-size: 3.5rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 5rem;
+    line-height: 3rem;
 
     color: $title-color;
 }
@@ -155,33 +175,37 @@ h4 {
 
 .card {
     @extend .grid;
-    grid-template-rows: 10% 75% 15%;
+    grid-template-rows: 15% 70% 15%;
     overflow: hidden;
-    width: 90%;
-    height: 250px;
+    min-width: 90%;
+    max-width: 95%;
+    min-height: 250px;
 
-    border-radius: 10px;
-    background-color: #efefef;
-    margin: 5% 0;
+    transition: 200ms;
+    padding: 5%;
 
+    // background-color: rgb(235, 235, 235);
+    // border: 1px solid grey;
 
     &__header {
         @extend .flex;
         @extend .fill;
-        padding: 0 5%;
+
+        justify-content: left;
+        padding: 2%;
     }
     &__main {
         @extend .grid;
         @extend .fill;
+        padding: 2%;
 
         grid-template-columns: 70% 30%;
-        padding: 0 5%;
+        gap: 2%;
     }
     &__footer {
         @extend .fill;
         @extend .flex;
-        padding: 0 5%;
-        background-color: #efefef;
+        padding: 2%;
         justify-content: space-between;
     }
     
@@ -191,7 +215,7 @@ h4 {
         @extend .grid;
         justify-items: left;
 
-        padding: 20px;
+        gap: 5%;
 
         .title {
             font-size: 1.5rem;
@@ -207,6 +231,15 @@ h4 {
     &__image {
         @extend .fill;
         overflow: hidden;
+    }
+
+    &__tag {
+        display: inline;
+        padding: 5px 20px;
+        border-radius: 25px;
+
+        font-weight: 500;
+        color: white;
     }
 }
 
@@ -228,6 +261,9 @@ h4 {
     margin: 0 10px;
 }
 
+.selected {
+    transform: scale(1.1);
+}
 .saved {
     background-color: $first-color;
     &::after{
