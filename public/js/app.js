@@ -1,7 +1,7 @@
 const projectsList = document.getElementById("list-of-projects");
 var lastButton = null;
 
-ShowPosts("new");
+ShowPosts("all");
 
 var colors = {
     env: '#CAD315',
@@ -13,8 +13,8 @@ var colors = {
 }
 
 //Add condition of bringing posts with a certain category
-function ShowPosts(collection, button) {
-    if(collection == 'new'){
+function ShowPosts(collection) {
+    if(collection == 'all'){
         blogPostsCollection.get()
         .then(function(querySnapshot) {
             const items = querySnapshot.docs.map(doc => {
@@ -36,13 +36,6 @@ function ShowPosts(collection, button) {
                     .catch(function(error) {
                         console.log("Error getting documents: ", error);
                     });
-    }
-    if(button != null) {
-        if(lastButton != null){
-            lastButton.classList.remove('selected');
-        }
-        button.classList.add('selected');
-        lastButton = button;
     }
 }
 
@@ -79,14 +72,18 @@ function NewCard(id, title, description, author, image, timestamp, color){
     return  (
     `<div class="card" onclick="openMe('${id}')">
         <div class="card__image" style="background:  url(${image}) no-repeat center; background-size:cover;"> </div>
-        <div class="card__info">
-            <div class="card__tag" style='background-color: ${color};'>${text_date}</div>
+        <main class="card__main">
             <h1 class="title">${title}</h1>
             <p class="description">${description}</p>
+        </main>
+        <footer class="card__footer">          
             <p class="author">${author}</p>
-        </div>
+        </footer>
 
     </div>`)
+
+    // <div class="card__tag" style='background-color: ${color};'>${text_date}</div>
+
 }
 
 function openMe(id) {

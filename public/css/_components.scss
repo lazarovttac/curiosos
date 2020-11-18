@@ -2,18 +2,26 @@
 
 .header {
     @extend .flex;
-    justify-content: space-between;
 
     width: 100%;
-    height: $header-height;
+    min-height: $header-height;
+    padding: 10px 20px;
 
-    padding: 10px;
 
-    
+    &--landing {
+        justify-content: space-between;
+
+    }
+
+    &--reader {
+        padding: 10px 0;
+    }
 
     &--browser {
 
         justify-content: center;
+
+        width: 100%;
 
         ul {
             @extend .grid;
@@ -26,64 +34,60 @@
     
             text-align: center;
             font-size: 1.25rem;
-            color: white;
+            color: #333;
     
             li {
                 cursor: pointer;
-                
-                transition: 200ms;
-
-                padding: 5px 30px;
-                border-radius: 20px;
-    
+                padding: 5px 0; 
+            
                 a {
                     text-decoration: none;    
-                    color: white;
-                }
-
-                &:nth-child(1){   
-                    background-color: $other-color;
-                }
-                &:nth-child(2){   
-                    background-color: $env-color;
-                }
-                &:nth-child(3){   
-                    background-color: $tech-color;
-                }
-                &:nth-child(4){   
-                    background-color: $medicine-color;
-                }
-                &:nth-child(5){   
-                    background-color: $music-color;
-                }
-                &:nth-child(6){   
-                    background-color: $food-color;
                 }
             }
     
     
         }
     }
+
+    &--reader {
+        justify-content: space-between;
+
+    }
 }
 
-
-h3 {
-    font-size: 3.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 3rem;
-
-    color: $title-color;
+.underline {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        width: 0;
+        bottom: -5px;
+        background: $second-color;
+        height: 4px;
+        transition-property: width;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+    }
+    
+    &:hover:after,
+    &:focus:after,
+    &:active:after {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
 }
 
-h4 {
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 3rem;
-
+.footer {
+    @extend .flex;
+    justify-content: space-around;
+    color: white;
+    width: 100%;
+    height: 7vh;
+    background-color: #333;
 }
-
 
 
 .button {
@@ -92,6 +96,8 @@ h4 {
     text-decoration: none;
     outline: none;
     border: none;
+
+    z-index: 100;
 
     cursor: pointer;
     
@@ -109,24 +115,28 @@ h4 {
     color: white;
 
     &--home {
-        height: 45px;
-        width: 45px;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
         background-color: $second-color;
 
         svg {
-            
+            width: 20px;
+            height: 20px;
             path {
                 fill: white;
             }
         }
     }
     &--create {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
         font-size: 1rem;
-        height: 45px;
-        width: 45px;
+        height: 55px;
+        width: 55px;
         border-radius: 50%;
-        background-color: $second-color;
+        background-color: $first-color;
 
         svg {
             
@@ -172,42 +182,89 @@ h4 {
     
         grid-row-start: 3;
     }
+
+    
+    &--delete {
+        position: absolute;
+        font-size: 1rem;
+        font-weight: 600;
+        background-color: rgba(51, 51, 51, 0.589);
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        right: 0;
+    }
 }
 
 
 .card {
-    @extend .grid;
-    grid-template-rows: 50% auto;
-    overflow-y: auto;
-    width: 80%;
-    min-height: 500px;
+    position: relative;
+    overflow-y: hidden;
+    width: 300px;
+    height: 450px;
+
+    background-color: white;
 
     transition: 200ms;
-    margin-bottom: 10%;
+    margin: 10px;
     gap: 5%;
 
     // background-color: rgb(240, 240, 240);
-    // border-radius: 2%;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px 1px rgba(134, 134, 134, 0.25);
+
     
     &__image {
-        @extend .fill;
+        width: 100%;
+        height: 50%;
         overflow: hidden;
     }
 
-    &__info {
-        @extend .fill;
-        @extend .grid;
-        justify-items: left;
+    &__main {
+        @extend .flex;
+        justify-content: flex-start;
+        flex-direction: column;
 
-        gap: 5%;
+        position: absolute;
+        top: 40%;
+        height: 100%;
+        width: 100%;
+
+        border-radius: 10px;
+
+        background-color: white;
+        padding: 15px;
+        padding-top: 30px;
+        gap: 10px;
 
         .title {
-            font-size: 1.5rem;
-            font-weight: 400;
+            font-size: 2rem;
+            font-weight: 500;
         }
         .description {
             font-size: 1.25rem;
         }
+        
+        transition: top 300ms, padding-top 300ms;
+
+        &:hover{
+            padding-top: 50px;
+            top: 0px;
+        }
+ 
+    }
+
+    &__footer {
+        @extend .flex;
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+
+        height: 10%;
+        width: 100%;
+
+        box-shadow: 0px -2px 20px 0px rgb(255, 255, 255);
+
         .author {
             font-size: 1rem;
         }
@@ -221,6 +278,7 @@ h4 {
         font-weight: 500;
         color: white;
     }
+
 }
 
 

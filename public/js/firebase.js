@@ -53,8 +53,6 @@ auth.onAuthStateChanged(user => {
             
         }
 
-        FixTextAreas();
-
     }else {
         currentUser = {};
         //Someone signed out

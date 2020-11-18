@@ -1,0 +1,12 @@
+
+
+@keyframes border-bottom {
+    0% {
+        border-bottom: none;
+    }
+    100% {
+        // border-bottom: 2px solid $second-color;
+        text-decoration: underline;
+        text-decoration-color: $second-color;
+    }
+}

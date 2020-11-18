@@ -1,39 +1,46 @@
 
-.header--reader {
-    
-}
 .reader { 
     @extend .flex;
 
+    padding: 0 20%;
+
+    overflow-x: hidden;
     flex-direction: column;
     height: auto;
-    padding-top: 5%;
+    margin-bottom: 20vh;
 
-    h1, p {
+    .element {
         height: auto;
-        width: 60%;
-        margin-bottom: 10px;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    h1 {
+    .heading1 {
+        margin-top: 50px;
+    }
+
+    #author {
+        font-size: 1.25rem;
+        margin-top: 60px;
+    }
+
+    #title {
         font-size: 3.5rem;
         font-weight: 600;
         border-bottom: 1px solid gray;
-        margin-bottom: 50px;
     }
     #image {
-        width: 60%;
         margin-bottom: 50px;
     }
     #description {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 400;
+        margin-bottom: 50px;
 
     }
     #content {
         font-size: 1.5rem;
         font-weight: 300;
         overflow: hidden;
-
     }
 }

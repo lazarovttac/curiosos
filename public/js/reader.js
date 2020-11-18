@@ -16,12 +16,14 @@ blogPost.get().then(function(doc) {
 
 
 var title = document.getElementById("title");
+var author = document.getElementById("author");
 var image = document.getElementById("image");
 var description = document.getElementById("description");
 var content = document.getElementById("content");
 
 function ShowContent(doc) {
     title.innerText = doc.data().title;
+    author.innerText += ` ${doc.data().author}`;
     image.src = doc.data().image;
     description.innerText = doc.data().description;
     content.innerHTML = doc.data().content;

@@ -14,27 +14,30 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
 </head>
 <body>
-    <header class="header">
-        <a href="index.html" class="button button--home">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.293 10.707L11.293 3.70697C11.6835 3.31659 12.3165 3.31659 12.707 3.70697L19.707 10.707C19.8945 10.8945 20 11.1488 20 11.414V21C20 21.5523 19.5523 22 19 22H14V15H10V22H5C4.44772 22 4 21.5523 4 21V11.414C4 11.1488 4.10545 10.8945 4.293 10.707Z" fill="#2E3A59"/>
-            </svg>  
-        </a>
-        <div class="whenSignedIn">
-            <img  class="user-image" src="" alt="">
-        </div>
-        <div class="whenSignedOut">
-            <button class="button button--log-in" onclick="SignIn()">
-                Ingresar
-            </button>
-        </div>
-    </header>
     <section class="section reader" id="reader">
-        <h1 id="title"></h1>
-        <img id="image" src=""/>
-        <p id="description"></p>
-        <p id="content"></div>
-        </p>
+
+        <header class="header header--reader">
+            <a href="index.html" class="button button--home">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.293 10.707L11.293 3.70697C11.6835 3.31659 12.3165 3.31659 12.707 3.70697L19.707 10.707C19.8945 10.8945 20 11.1488 20 11.414V21C20 21.5523 19.5523 22 19 22H14V15H10V22H5C4.44772 22 4 21.5523 4 21V11.414C4 11.1488 4.10545 10.8945 4.293 10.707Z" fill="#2E3A59"/>
+                </svg>  
+            </a>
+            <div class="whenSignedIn">
+                <img  class="user-image" src="" alt="">
+            </div>
+            <div class="whenSignedOut">
+                <button class="button button--log-in" onclick="SignIn()">
+                    Ingresar
+                </button>
+            </div>
+        </header>
+        
+        <p id="author" class="element">Por:</p>
+        <h1 id="title" class="element"></h1>
+        <p id="description" class="element"></p>
+        <img id="image" class="element" src=""/>
+        <div id="content" class="element"></div>
+    </div>
     </section>
         <script src="js/firebase.js"></script>
         <script src="js/reader.js" defer></script>
