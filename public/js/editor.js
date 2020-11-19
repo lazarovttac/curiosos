@@ -51,6 +51,7 @@ saveButton.addEventListener("click", function (){
           }).then(function(){
             console.log("All its ok");
             saveButton.classList.add("saved");
+            window.location = "index.html"
         
           }).catch(function(error){
               alert(error);
@@ -125,6 +126,9 @@ function ConvertContent() {
         break;
       case 'image':
         content = content.concat(`<img  class='element image' src='${element.value}'/>`);
+        break;
+      case 'link':
+        content = content.concat(`<a class='element link' target="_blank" href='${element.value}'>${element.value}</a>`);
         break;
       default:
         break;

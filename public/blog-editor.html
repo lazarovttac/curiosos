@@ -37,10 +37,25 @@
             <option value="food">Comida</option>
             <option value="music">Música</option>
         </select>
-        <textarea id="title-input" class="input" placeholder="Título" maxlength="100"></textarea>
+        <textarea id="title-input" class="input" placeholder="Título" maxlength="150"></textarea>
         <textarea id="image-input" class="input" placeholder="URL de imagen"></textarea>
-        <textarea id="description-input" class="input" placeholder="Descripción breve" maxlength="200"></textarea>
+        <textarea id="description-input" class="input" placeholder="Descripción breve" maxlength="300"></textarea>
         <div id="content"></div>
+        <div class="editor__bar">
+            <button class="button" onclick="CreateTextArea('heading1', 'Subtítulo')">
+                Título
+            </button>
+            <button class="button" onclick="CreateTextArea('paragraph', 'Párrafo')">
+                Párrafo
+            </button>
+            <button class="button" onclick="CreateTextArea('image', 'URL de imagen')">
+                Imagen
+            </button>
+            <button class="button" onclick="CreateTextArea('link', 'Link')">
+                Link
+            </button>
+            
+        </div>
     </section>
     <section class="section whenSignedOut signIn">
         <p>Debes iniciar sesión para publicar</p>
@@ -50,19 +65,6 @@
     </section>
 
 </section>
-
-    
-    <div class="editor__bar">
-        <button class="button" onclick="CreateTextArea('heading1', 'Subtítulo')">
-            Título
-        </button>
-        <button class="button" onclick="CreateTextArea('paragraph', 'Párrafo')">
-            Párrafo
-        </button>
-        <button class="button" onclick="CreateTextArea('image', 'URL de imagen')">
-            Imagen
-        </button>
-    </div>
     <script src="js/editor.js"></script>
     <script src="js/firebase.js" defer></script>
 </body>

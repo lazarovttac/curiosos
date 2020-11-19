@@ -4,15 +4,20 @@
 
     padding: 0 20%;
 
-    overflow-x: hidden;
+    overflow: hidden;
     flex-direction: column;
     height: auto;
     margin-bottom: 20vh;
 
     .element {
+        display: block;
         height: auto;
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .image {
+
     }
 
     .heading1 {
@@ -29,8 +34,12 @@
         font-weight: 600;
         border-bottom: 1px solid gray;
     }
+    #image-wrapper {
+    }
     #image {
         margin-bottom: 50px;
+        height: auto;
+        visibility: hidden;
     }
     #description {
         font-size: 1.5rem;

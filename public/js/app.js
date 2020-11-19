@@ -15,7 +15,7 @@ var colors = {
 //Add condition of bringing posts with a certain category
 function ShowPosts(collection) {
     if(collection == 'all'){
-        blogPostsCollection.get()
+        blogPostsCollection.orderBy("created", "desc").get()
         .then(function(querySnapshot) {
             const items = querySnapshot.docs.map(doc => {
                 return NewCard(doc.id, doc.data().title, doc.data().description, doc.data().author, doc.data().image, doc.data().created, ChooseColor(doc.data().category))});
@@ -26,16 +26,20 @@ function ShowPosts(collection) {
                         console.log("Error getting documents: ", error);
                     });
     }else {
-        blogPostsCollection.where("category", "==", collection).get()
+        blogPostsCollection.orderBy("created", "desc").get()
         .then(function(querySnapshot) {
             const items = querySnapshot.docs.map(doc => {
-                return NewCard(doc.id, doc.data().title, doc.data().description, doc.data().author, doc.data().image, doc.data().created, ChooseColor(doc.data().category))});
-                        
-                        projectsList.innerHTML = items.join('');
-                    })
-                    .catch(function(error) {
-                        console.log("Error getting documents: ", error);
-                    });
+                
+                if(doc.data().category == collection) return NewCard(doc.id, doc.data().title, doc.data().description, doc.data().author, doc.data().image, doc.data().created, ChooseColor(doc.data().category))});
+                            
+                    projectsList.innerHTML = items.join('');
+                    
+                
+                })
+                .catch(function(error) {
+                    console.log("Error getting documents: ", error);
+                });
+                
     }
 }
 

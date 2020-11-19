@@ -17,6 +17,7 @@ blogPost.get().then(function(doc) {
 
 var title = document.getElementById("title");
 var author = document.getElementById("author");
+var imageWrapper = document.getElementById("image-wrapper");
 var image = document.getElementById("image");
 var description = document.getElementById("description");
 var content = document.getElementById("content");
@@ -24,7 +25,9 @@ var content = document.getElementById("content");
 function ShowContent(doc) {
     title.innerText = doc.data().title;
     author.innerText += ` ${doc.data().author}`;
-    image.src = doc.data().image;
+    imageWrapper.style.background = `url(${doc.data().image})  center no-repeat`;
+    imageWrapper.style.backgroundSize = "cover";
+    image.src = `${doc.data().image}`;
     description.innerText = doc.data().description;
     content.innerHTML = doc.data().content;
 }

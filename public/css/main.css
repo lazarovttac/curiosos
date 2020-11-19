@@ -254,18 +254,19 @@ body {
 
 .button--delete {
   position: absolute;
+  border-radius: 50%;
   font-size: 1rem;
   font-weight: 600;
   background-color: rgba(51, 51, 51, 0.589);
   width: 25px;
   height: 25px;
-  top: 50%;
+  top: 0;
   right: 0;
 }
 
 .card {
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
   width: 300px;
   height: 450px;
   background-color: white;
@@ -312,6 +313,7 @@ body {
 
 .card__main .description {
   font-size: 1.25rem;
+  overflow-wrap: break-word;
 }
 
 .card__main:hover {
@@ -464,6 +466,7 @@ select {
   width: 100%;
   margin-bottom: 20px;
   background-color: transparent;
+  overflow: hidden;
 }
 
 .editor #post-type {
@@ -485,11 +488,13 @@ select {
 .editor #description-input {
   font-size: 2rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .editor #content {
   width: 100%;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
 }
 
 .editor #content .element {
@@ -504,6 +509,7 @@ select {
 .editor #content .element .heading1 {
   font-weight: bold;
   font-size: 2rem;
+  line-height: 2rem;
 }
 
 .editor #content .element .image {
@@ -513,17 +519,16 @@ select {
 }
 
 .editor__bar {
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 5%;
   width: 30vw;
   height: 40px;
-  position: fixed;
-  bottom: 10%;
-  right: 50%;
-  -webkit-transform: translate(50%);
-          transform: translate(50%);
-  border-radius: 40px;
+}
+
+.editor__bar .button {
+  border-radius: 10px;
+  background-color: #3D97EA;
 }
 
 .signIn {
@@ -539,7 +544,7 @@ select {
 
 .reader {
   padding: 0 20%;
-  overflow-x: hidden;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -549,6 +554,7 @@ select {
 }
 
 .reader .element {
+  display: block;
   height: auto;
   width: 100%;
   margin-bottom: 20px;
@@ -571,6 +577,8 @@ select {
 
 .reader #image {
   margin-bottom: 50px;
+  height: auto;
+  visibility: hidden;
 }
 
 .reader #description {
