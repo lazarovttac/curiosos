@@ -1,13 +1,11 @@
 
 @media screen and (max-width: 500px) {
-    .landing{
-    
-        &__main {
-            grid-template-columns: 1fr;
-        }
-        &__left {
-            grid-template-rows: 60% 20% 20%;
 
+    .section {
+        padding: 0 5%;
+    }
+    .landing{
+        &__main{
             h3 {
                 font-size: 2.5rem;
             }
@@ -18,14 +16,6 @@
     }
 
     .button {
-
-
-        &--start {
-            font-size: 1rem;
-            width: 100px;
-            height: 30px;
-        }
-
         &--create {
             width: 45px;
             height: 45px;
@@ -36,20 +26,17 @@
     
     .header{
         &--browser {
-            display: none;
-            // height: auto;
-            // ul {
-            //     grid-template-columns: 1fr 1fr;
-    
-            //     li {
-            //         margin-bottom: 10px;
-            //     }
-            // }
+            .categories-list {
+                display: none;
+            }
+            .categories-select {
+                display: block;
+            }
         }
-    }
 
-    .browser__content {
-        grid-template-columns: 1fr;
+        &--editor {
+            padding: 0;
+        }
     }
 
     .editor {
@@ -68,21 +55,30 @@
     }
 
     .reader {
-        #title, #author, #image, #description, #content {
-           
-            width: 80%;
+        #author {
+            font-size: 1rem;
+        }
+        #title{
+            font-size: 2.5rem;
+        }
+        
+        #description{
+
+            font-size: 1.5rem;
+        }
+        
+        #content {
+            font-size: 1rem;
         }
     }
 }
 @media screen and (min-width: 500px) {
-    .landing__main {
-        grid-template-columns: 1fr 1fr;
-    }
-    
+
     .header{
         &--browser {
             height: auto;
-            ul {
+            
+            .categories-list {
                 grid-template-columns: 1fr 1fr 1fr;
     
                 li {
@@ -90,10 +86,6 @@
                 }
             }
         }
-    }
-
-    .browser__content {
-        grid-template-columns: 1fr;
     }
 }
 @media screen and (min-width: 768px) {
@@ -104,7 +96,7 @@
     .header{
         &--browser {
             height: auto;
-            ul {
+            .categories-list {
                 grid-template-columns: 1fr 1fr 1fr;
     
                 li {
@@ -112,10 +104,6 @@
                 }
             }
         }
-    }
-
-    .browser__content {
-        grid-template-columns: 1fr 1fr;
     }
 
     .editor {
@@ -126,14 +114,11 @@
     }
 }
 @media screen and (min-width: 800px) {
-    .landing__main {
-        grid-template-columns: 1fr 1fr;
-    }
-    
+
     .header{
         &--browser {
             height: auto;
-            ul {
+            .categories-list {
                 grid-template-columns: repeat(6, 1fr);
     
                 li {

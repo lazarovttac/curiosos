@@ -17,13 +17,17 @@
         padding: 10px 0;
     }
 
+    &--editor {
+        justify-content: space-between;
+
+    }
     &--browser {
 
         justify-content: center;
 
         width: 100%;
 
-        ul {
+        .categories-list {
             @extend .grid;
             @extend .fill;
 
@@ -46,6 +50,10 @@
             }
     
     
+        }
+
+        .categories-select {
+            display: none;
         }
     }
 
@@ -211,7 +219,7 @@
 
     // background-color: rgb(240, 240, 240);
     border-radius: 10px;
-    box-shadow: 0px 1px 5px 1px rgba(134, 134, 134, 0.25);
+    box-shadow: 0px 1px 5px 1px rgba(134, 134, 134, 0.027);
 
     
     &__image {
@@ -307,4 +315,12 @@
     &::after{
         content: 'Guardado';
     }
+}
+
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }

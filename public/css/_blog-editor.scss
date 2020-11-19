@@ -14,7 +14,7 @@
         border-radius: 0;
         outline: none;
         height: auto;
-        width: 80%;
+        width: 100%;
         margin-bottom: 20px;
 
         background-color: transparent;
@@ -22,8 +22,7 @@
 
     #post-type {
         margin-bottom: 50px;
-        border-radius: 10px;
-        outline: none;
+
     }
 
     #title-input {
@@ -42,8 +41,7 @@
         margin-bottom: 20px;
     }
     #content {
-        width: 80%;
-
+        width: 100%;
         .element {
             position: relative;
             width: 100%;
@@ -97,9 +95,4 @@
     p {
         margin-bottom: 40px;
     }
-}
-
-.header--editor {
-    padding: 10px 50px;
-    justify-content: space-between;
 }

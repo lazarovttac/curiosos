@@ -58,7 +58,7 @@
    
     <section class="section browser" id="browser">
         <header class="header header--browser">
-                <ul>
+                <ul class="categories-list">
                     <li onclick="ShowPosts('all')" class="underline">Todos</li>
                     <li onclick="ShowPosts('environment', this)"class="underline">Ambiente</li>
                     <li onclick="ShowPosts('tech')"class="underline">Tecnología</li>
@@ -66,6 +66,14 @@
                     <li onclick="ShowPosts('music')"class="underline">Música</li>
                     <li onclick="ShowPosts('food')"class="underline">Cocina</li>
                 </ul>
+                <select class="categories-select" onchange="ShowPosts(this.value)">
+                    <option value="all">Todos</option>
+                    <option value="environment">Medio Ambiente</option>
+                    <option value="tech">Tecnología</option>
+                    <option value="medicine">Medicina</option>
+                    <option value="food">Comida</option>
+                    <option value="music">Música</option>
+                </select>
         </header>
         <main class="browser__content" id="list-of-projects">
                 
