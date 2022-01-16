@@ -1,6 +1,6 @@
 # El Blog Curioso
 
-https://www.curiosidad.web.app
+[curiosidad.web.app]
 
 ### My first ever website using Firebase as a backend service.
 
