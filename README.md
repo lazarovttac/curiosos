@@ -2,7 +2,7 @@
 
 Publicado en: curiosidad.web.app
 
-### My first ever website using Firebase as a backend service.
+### Mi primer sitio web utilizande Firebase como servicio backend para autenticación y base de datos
 
-Este blog fué construido en 1 semana para el Taller de Curiosidad de 6to año de la escuela secundaria.
+Construí este pequeño blog en una semana para un taller sobre curiosidades durante el último año de la escuela secundaria.
 Es un lugar para encontrar y crear publicaciones, información, noticias, tutoriales, recetas, ideas, etc. 
